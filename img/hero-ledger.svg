@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="220" viewBox="0 0 600 220" role="img" aria-labelledby="title desc">
+  <title id="title">RosterPay decorative pay ledger</title>
+  <desc id="desc">Four ledger rows for ordinary hours, evening penalties, weekend penalties, and highlighted total pay.</desc>
+  <path d="M24 12H576V208L553 200L530 208L507 200L484 208L461 200L438 208L415 200L392 208L369 200L346 208L323 200L300 208L277 200L254 208L231 200L208 208L185 200L162 208L139 200L116 208L93 200L70 208L47 200L24 208Z" fill="#F4F6F2"/>
+  <path d="M44 151L556 147L552 184L42 188Z" fill="#FFE24D"/>
+  <g fill="none" stroke="#5B6B62" stroke-width="1">
+    <path d="M48 68H552"/>
+    <path d="M48 104H552"/>
+    <path d="M48 140H552"/>
+  </g>
+  <path d="M48 184H552" fill="none" stroke="#1F4D3A" stroke-width="2"/>
+  <g font-family="'Segoe UI', system-ui, sans-serif" font-size="15" fill="#5B6B62">
+    <text x="52" y="56">Ordinary hours</text>
+    <text x="52" y="92">Evening penalties</text>
+    <text x="52" y="128">Weekend penalties</text>
+    <text x="548" y="56" text-anchor="end">$ —</text>
+    <text x="548" y="92" text-anchor="end">$ —</text>
+    <text x="548" y="128" text-anchor="end">$ —</text>
+  </g>
+  <g font-family="'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="700" fill="#14201A">
+    <text x="52" y="173">Total pay</text>
+    <text x="548" y="173" text-anchor="end">$ —</text>
+  </g>
+</svg>

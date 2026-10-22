@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">RosterPay</title>
+  <rect width="64" height="64" rx="14" fill="#1F4D3A"/>
+  <path d="M18 11H46V53L39 50L32 53L25 50L18 53Z" fill="#F4F6F2"/>
+  <path d="M22 22H42M22 30H38" fill="none" stroke="#1F4D3A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 36L44 35L43 41L20 42Z" fill="#FFE24D"/>
+  <path d="M22 38H42" fill="none" stroke="#14201A" stroke-width="2" stroke-linecap="round"/>
+</svg>

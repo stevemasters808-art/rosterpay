@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-labelledby="title">
+  <title id="title">RosterPay</title>
+  <g transform="translate(0 4)">
+    <rect width="56" height="56" rx="12" fill="#1F4D3A"/>
+    <path d="M16 9H40V47L34 44L28 47L22 44L16 47Z" fill="#F4F6F2"/>
+    <path d="M20 19H36M20 26H33" fill="none" stroke="#1F4D3A" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 31L38 30L38 36L18 37Z" fill="#FFE24D"/>
+    <path d="M20 33H36" fill="none" stroke="#14201A" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="72" y="46" fill="#1F4D3A" font-family="'Segoe UI', system-ui, sans-serif" font-size="42" font-weight="700" letter-spacing="-1.4">RosterPay</text>
+</svg>

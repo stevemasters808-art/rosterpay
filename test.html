@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RosterPay worked-example tests</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Worked-example tests</h1>
+<p class="lede">Each case is a shift priced with figures printed in the Fair Work Ombudsman pay guides (1 July 2026). A case fails if the total is off by a cent. Same checks run with <code>node test.js</code>.</p>
+<p id="summary"></p>
+<table class="ledger"><thead><tr><th>Result</th><th>Case</th><th class="num">Expected</th><th class="num">Got</th></tr></thead><tbody id="rows"></tbody></table>
+</main>
+<script src="engine.js"></script>
+<script src="test.js"></script>
+<script>
+Promise.all([fetch('rates.json'), fetch('holidays.json')]).then(function (rs) { return Promise.all(rs.map(function (r) { return r.json(); })); }).then(function (d) {
+  var res = RosterPayTests.run(RosterPay, d[0], d[1]), fails = 0, tb = document.getElementById('rows');
+  res.forEach(function (r) {
+    if (!r.pass) fails++;
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + (r.pass ? 'PASS' : '<strong>FAIL</strong>') + '</td><td>' + r.name + '<br><small>' + r.why + '</small></td><td class="num">$' + r.expect.toFixed(2) + '</td><td class="num">' + (r.error || (r.got == null ? '' : '$' + r.got.toFixed(2))) + '</td>';
+    tb.appendChild(tr);
+  });
+  document.getElementById('summary').textContent = fails ? fails + ' of ' + res.length + ' failed' : 'All ' + res.length + ' passed';
+});
+</script>
+</body>
+</html>

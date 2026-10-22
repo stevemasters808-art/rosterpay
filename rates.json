@@ -1,0 +1,86 @@
+{
+ "version": "2026-07-01",
+ "checked": "2026-10-22",
+ "licence": "Award text and rates: Fair Work Commission, Creative Commons Attribution 4.0 International (CC BY 4.0). Rate figures cross-checked against the Fair Work Ombudsman pay guides published 24 June 2026. Not endorsed by the Fair Work Commission or the Fair Work Ombudsman.",
+ "rounding": "Junior rate = adult hourly x percent, rounded to the cent. Penalty or overtime rate = that hourly x percent, rounded to the cent. Each line = hours x rate, rounded to the cent. Matches the FWO pay guide.",
+ "awards": {
+  "MA000004": {
+   "name": "General Retail Industry Award 2020",
+   "short": "Retail",
+   "casualLoading": 25,
+   "span": { "monfri": ["07:00", "21:00"], "sat": ["07:00", "18:00"], "sun": ["09:00", "18:00"] },
+   "spanLateTradingEnd": "23:00",
+   "dailyOrdinaryMax": 9,
+   "dailyOrdinaryMaxOnce": 11,
+   "weeklyOrdinaryMax": 38,
+   "penalties": {
+    "ordinary": { "ft": 100, "casual": 125 },
+    "evening": { "from": "18:00", "ft": 125, "casual": 150 },
+    "sat": { "ft": 125, "casual": 150 },
+    "sun": { "ft": 150, "casual": 175 },
+    "ph": { "ft": 225, "casual": 250 }
+   },
+   "overtime": {
+    "casualLoadingApplies": true,
+    "weekday": [ { "hours": 3, "ft": 150, "casual": 175 }, { "ft": 200, "casual": 225 } ],
+    "sat": [ { "hours": 3, "ft": 150, "casual": 175 }, { "ft": 200, "casual": 225 } ],
+    "sun": [ { "ft": 200, "casual": 225 } ],
+    "ph": [ { "ft": 250, "casual": 275 } ]
+   },
+   "levels": { "1": "Level 1 (shop assistant, checkout, trolley)", "2": "Level 2 (forklift, trainee supervisor)", "3": "Level 3 (2IC, senior salesperson, tradesperson)", "4": "Level 4 (assistant manager, butcher, baker)", "5": "Level 5 (tradesperson in charge)", "6": "Level 6 (department manager)", "7": "Level 7 (visual merchandiser, qualified)", "8": "Level 8 (store manager, pharmacist)" },
+   "rates": [
+    { "effectiveFrom": "2026-07-01", "source": "FWO pay guide MA000004 published 24 June 2026, Table 4 clause 17.1",
+      "hourly": { "1": 27.81, "2": 28.45, "3": 28.89, "4": 29.45, "5": 30.66, "6": 31.11, "7": 32.67, "8": 33.99 } }
+   ],
+   "junior": {
+    "levels": ["1", "2", "3"],
+    "ages": { "u16": "Under 16", "16": "16", "17": "17", "18": "18", "19": "19", "20": "20" },
+    "bands": [
+     { "effectiveFrom": "2026-07-01", "source": "Clause 17.2 Table 5", "pct": { "u16": 45, "16": 50, "17": 60, "18": 70, "19": 80, "20": 90 }, "pctOver6m": { "20": 100 } },
+     { "effectiveFrom": "2026-12-01", "source": "Junior rates decision AM2024/24, PR813655, 26 Aug 2026", "pctOver6m": { "18": 75, "19": 85 } },
+     { "effectiveFrom": "2027-07-01", "pctOver6m": { "18": 80, "19": 90 } },
+     { "effectiveFrom": "2027-12-01", "pctOver6m": { "18": 85, "19": 95 } },
+     { "effectiveFrom": "2028-07-01", "pctOver6m": { "18": 90, "19": 100 } },
+     { "effectiveFrom": "2028-12-01", "pctOver6m": { "18": 95 } },
+     { "effectiveFrom": "2029-07-01", "pctOver6m": { "18": 100 } }
+    ]
+   }
+  },
+  "MA000009": {
+   "name": "Hospitality Industry (General) Award 2020",
+   "short": "Hospitality",
+   "casualLoading": 25,
+   "dailyOrdinaryMax": 11.5,
+   "dailyOrdinaryMaxCasual": 12,
+   "weeklyOrdinaryMax": 38,
+   "penalties": {
+    "ordinary": { "ft": 100, "casual": 125 },
+    "evening": { "from": "19:00", "to": "24:00", "ft": 100, "casual": 125, "addPerHour": 2.95 },
+    "night": { "from": "00:00", "to": "07:00", "ft": 100, "casual": 125, "addPerHour": 4.42 },
+    "sat": { "ft": 125, "casual": 150 },
+    "sun": { "ft": 150, "casual": 175 },
+    "ph": { "ft": 225, "casual": 250 }
+   },
+   "overtime": {
+    "casualLoadingApplies": false,
+    "weekday": [ { "hours": 2, "ft": 150, "casual": 150 }, { "ft": 200, "casual": 200 } ],
+    "sat": [ { "ft": 200, "casual": 200 } ],
+    "sun": [ { "ft": 200, "casual": 200 } ],
+    "ph": null
+   },
+   "levels": { "intro": "Introductory (first 3 months, no experience)", "1": "Level 1 (food and beverage attendant grade 1, kitchen attendant grade 1, guest service grade 1)", "2": "Level 2 (F&B attendant grade 2, cook grade 1, kitchen attendant grade 2, front office grade 1)", "3": "Level 3 (F&B attendant grade 3, cook grade 2, guest service grade 3)", "4": "Level 4 (cook trade grade 3, F&B attendant grade 4, guest service grade 4)", "5": "Level 5 (cook grade 4, F&B supervisor, front office supervisor)", "6": "Level 6 (cook grade 5)" },
+   "rates": [
+    { "effectiveFrom": "2026-07-01", "source": "FWO pay guide MA000009 published 24 June 2026, Table 3 clause 18.1",
+      "hourly": { "intro": 25.74, "1": 26.44, "2": 27.08, "3": 27.97, "4": 29.45, "5": 31.30, "6": 32.13 } }
+   ],
+   "junior": {
+    "levels": null,
+    "ages": { "u17": "Under 17", "17": "17", "18": "18", "19": "19", "20": "20" },
+    "liquorServiceAdult": true,
+    "bands": [
+     { "effectiveFrom": "2026-07-01", "source": "Clause 18.4 Table 5", "pct": { "u17": 50, "17": 60, "18": 70, "19": 85, "20": 100 } }
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Penalty rates calculator TAS (Retail and Hospitality award) | RosterPay</title>
+<meta name="description" content="Free Tasmania penalty rates calculator for the General Retail and Hospitality awards. Evening, weekend, public holiday and overtime pay for your shifts at 1 July 2026 rates, with TAS public holidays built in.">
+<link rel="canonical" href="https://rosterpay.com.au/tas.html">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Penalty rates calculator TAS (Retail and Hospitality award) | RosterPay">
+<meta property="og:description" content="Free Tasmania penalty rates calculator for the General Retail and Hospitality awards. Evening, weekend, public holiday and overtime pay for your shifts at 1 July 2026 rates, with TAS public holidays built in.">
+<meta property="og:url" content="https://rosterpay.com.au/tas.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rosterpay.com.au/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"RosterPay penalty rates calculator","url":"https://rosterpay.com.au/tas.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD"},"description":"Free Tasmania penalty rates calculator for the General Retail and Hospitality awards. Evening, weekend, public holiday and overtime pay for your shifts at 1 July 2026 rates, with TAS public holidays built in."}</script>
+</head>
+<body data-state="TAS">
+<header class="top">
+<a class="brand" href="./"><img src="img/favicon.svg" alt="" width="24" height="24">RosterPay</a>
+<nav aria-label="States">
+<a href="./">All states</a>
+<a href="nsw.html">NSW</a>
+<a href="vic.html">VIC</a>
+<a href="qld.html">QLD</a>
+<a href="wa.html">WA</a>
+<a href="sa.html">SA</a>
+<a href="tas.html" aria-current="page">TAS</a>
+<a href="act.html">ACT</a>
+<a href="nt.html">NT</a>
+</nav>
+</header>
+<main>
+<h1>Penalty rates calculator TAS</h1>
+<p class="lede">What the Retail or Hospitality award says your shifts are worth, at the rates from 1 July 2026. Estimate only. Free, no sign-up, nothing leaves your browser.</p>
+
+<form id="calc" novalidate>
+<fieldset>
+<legend>Your job</legend>
+<div class="grid">
+<div class="wide"><span class="label" id="awardLabel" style="font-weight:600">Award</span>
+<div class="choices" role="radiogroup" aria-labelledby="awardLabel">
+<label><input type="radio" name="award" value="MA000004" checked> Retail (MA000004)</label>
+<label><input type="radio" name="award" value="MA000009"> Hospitality (MA000009)</label>
+</div></div>
+<div class="wide"><span id="empLabel" style="font-weight:600">Employment type</span>
+<div class="choices" role="radiogroup" aria-labelledby="empLabel">
+<label><input type="radio" name="employment" value="ft" checked> Full-time</label>
+<label><input type="radio" name="employment" value="pt"> Part-time</label>
+<label><input type="radio" name="employment" value="casual"> Casual</label>
+</div>
+<div id="ptHours" hidden><label for="agreedWeeklyHours">Agreed hours per week<small>From your part-time agreement. Hours above this are overtime. Leave blank to use 38.</small></label><input type="number" id="agreedWeeklyHours" min="1" max="38" step="0.5"></div>
+</div>
+<div><label for="level">Classification level<small>On your contract or payslip. Not sure? Level 1 is the most common.</small></label><select id="level"></select>
+<p class="hint" id="juniorLevelNote" hidden>Junior rates only apply at Retail levels 1 to 3. At this level the adult rate is used.</p></div>
+<div><label for="age">Age<small>Junior rates are a percentage of the adult rate.</small></label><select id="age"></select>
+<label class="check" id="over6mWrap" hidden><input type="checkbox" id="over6m"> More than 6 months with this employer<small>Changes the rate for 18 to 20 year olds in Retail, including the phase-in from 1 December 2026.</small></label>
+<label class="check" id="liquorWrap" hidden><input type="checkbox" id="liquor"> I serve alcohol (liquor service)<small>Hospitality juniors who serve liquor are paid the adult rate.</small></label>
+</div>
+<div><label for="state">State or territory<small>Sets which public holidays apply.</small></label><select id="state">
+<option value="NSW">New South Wales</option>
+<option value="VIC">Victoria</option>
+<option value="QLD">Queensland</option>
+<option value="WA">Western Australia</option>
+<option value="SA">South Australia</option>
+<option value="TAS" selected>Tasmania</option>
+<option value="ACT">Australian Capital Territory</option>
+<option value="NT">Northern Territory</option>
+</select>
+<label class="check"><input type="checkbox" id="regional"> Include regional and local public holidays<small>Show days, Hobart Regatta, Ekka (Brisbane) and similar.</small></label></div>
+<div id="retailOpts" class="wide">
+<label class="check"><input type="checkbox" id="lateTrading"> My store trades after 9pm on weekdays or after 6pm on weekends<small>Lets ordinary hours run until 11pm instead of counting them as overtime.</small></label>
+<label class="check"><input type="checkbox" id="elevenHourDay"> My roster allows one 11-hour day a week<small>Otherwise ordinary hours stop at 9 a day and the rest is overtime.</small></label>
+</div>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Pay period</legend>
+<div class="grid">
+<div><span id="ppLabel" style="font-weight:600">Length</span>
+<div class="choices" role="radiogroup" aria-labelledby="ppLabel">
+<label><input type="radio" name="periodWeeks" value="1" checked> Weekly</label>
+<label><input type="radio" name="periodWeeks" value="2"> Fortnightly</label>
+</div></div>
+<div><label for="periodStart">First day of the pay period<small>Weekly overtime (over 38 hours) is counted from this day.</small></label><input type="date" id="periodStart"></div>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Shifts</legend>
+<p class="hint">Enter each shift you worked or were rostered. A shift can finish after midnight.</p>
+<table class="shifts" id="shifts">
+<thead><tr><th>Date</th><th>Start</th><th>Finish</th><th>Unpaid break (min)</th><th><span class="sr-only">Remove</span></th></tr></thead>
+<tbody></tbody>
+</table>
+<button type="button" class="btn btn-ghost" id="addShift">Add another shift</button>
+</fieldset>
+
+<fieldset>
+<legend>Before you calculate</legend>
+<div class="grid">
+<div><span id="eaLabel" style="font-weight:600">Does an enterprise agreement cover your workplace?</span>
+<p class="hint">Big employers often have one. It would be named on your payslip or contract.</p>
+<div class="choices" role="radiogroup" aria-labelledby="eaLabel">
+<label><input type="radio" name="ea" value="no"> No</label>
+<label><input type="radio" name="ea" value="unsure"> Not sure</label>
+<label><input type="radio" name="ea" value="yes"> Yes</label>
+</div></div>
+<div><span id="wpLabel" style="font-weight:600">Where do you work?</span>
+<p class="hint">Cafes, restaurants, fast food and pharmacies are under other awards.</p>
+<div class="choices" role="radiogroup" aria-labelledby="wpLabel" id="workplace">
+<label><input type="radio" name="workplace" value="ok"> Shop or supermarket</label>
+<label><input type="radio" name="workplace" value="other"> Somewhere else</label>
+</div></div>
+</div>
+</fieldset>
+<button type="submit" class="btn btn-primary">Calculate award minimum</button>
+</form>
+
+<section id="result" hidden aria-live="polite"></section>
+
+<h2>How penalty rates work in these awards</h2>
+<h3>General Retail Industry Award (MA000004)</h3>
+<p>Ordinary hours can be rostered 7am to 9pm Monday to Friday, 7am to 6pm Saturday and 9am to 6pm Sunday. Full-time and part-time staff get 125% after 6pm on weekdays and on Saturdays, 150% on Sundays and 225% on public holidays. Casuals get 25% more on top at every step: 125% for ordinary hours, 150% evenings and Saturdays, 175% Sundays, 250% public holidays. Work past 9 ordinary hours in a day, past 38 in a week, or outside the span is overtime: 150% for the first 3 hours Monday to Saturday then 200%, 200% all day Sunday, 250% on a public holiday (casuals add 25% to each). Level 1 adult minimum is $27.81 an hour; level 8 is $33.99.</p>
+<p>Juniors at levels 1 to 3 are paid a percentage of the adult rate: 45% under 16, then 50%, 60%, 70%, 80% at 19, and 90% at 20 (100% after 6 months). From 1 December 2026, 18 and 19 year olds with more than 6 months' service step up 5% every 1 December and 1 July until they reach the adult rate.</p>
+<h3>Hospitality Industry (General) Award (MA000009)</h3>
+<p>Monday to Friday 7am to 7pm is the ordinary rate. From 7pm to midnight add $2.95 for each hour or part hour; from midnight to 7am add $4.42. Saturdays pay 125%, Sundays 150%, public holidays 225%; casuals get 150%, 175% and 250% including their loading. Overtime applies after 11.5 ordinary hours in a shift (12 for casuals) or 38 in a week: 150% for the first 2 hours Monday to Friday, then 200%, and 200% all weekend. Hospitality casuals are not paid the casual loading on overtime. Only the single highest penalty applies to any hour. Level 1 adult minimum is $26.44 an hour; introductory is $25.74. Juniors get 50% under 17, 60% at 17, 70% at 18, 85% at 19 and the full rate at 20; juniors who serve alcohol are always paid the adult rate.</p>
+
+<h2>Public holidays in Tasmania</h2>
+<p>Tasmania's Eight Hours Day is the second Monday in March. Easter Saturday and Easter Sunday are not public holidays in Tasmania, so weekend rates apply, while Easter Tuesday is generally public-service only. Regional show days (Royal Hobart Regatta, Royal Hobart Show, Recreation Day and others) apply only in parts of the state; tick the regional option if yours applies.</p>
+<p>Public holidays used by this calculator for Tasmania (2026 and 2027, from the Fair Work Ombudsman's list):</p>
+<ul class="holidays">
+<li>Thu 1 Jan 2026: New Year&#x27;s Day</li>
+<li>Mon 26 Jan 2026: Australia Day</li>
+<li>Mon 9 Feb 2026: Royal Hobart Regatta <span class="flag">(regional: only observed in certain areas of the state, including Hobart)</span></li>
+<li>Mon 9 Mar 2026: Eight Hours Day</li>
+<li>Fri 3 Apr 2026: Good Friday</li>
+<li>Mon 6 Apr 2026: Easter Monday</li>
+<li>Tue 7 Apr 2026: Easter Tuesday <span class="flag">(regional: generally Tasmanian Public Service only)</span></li>
+<li>Sat 25 Apr 2026: Anzac Day</li>
+<li>Mon 8 Jun 2026: King&#x27;s Birthday</li>
+<li>Thu 22 Oct 2026: Royal Hobart Show <span class="flag">(regional: only observed in certain areas of the state, including Hobart)</span></li>
+<li>Mon 2 Nov 2026: Recreation Day <span class="flag">(regional: areas of the state that don&#x27;t observe Royal Hobart Regatta)</span></li>
+<li>Fri 25 Dec 2026: Christmas Day</li>
+<li>Mon 28 Dec 2026: Boxing Day</li>
+<li>Fri 1 Jan 2027: New Year&#x27;s Day</li>
+<li>Tue 26 Jan 2027: Australia Day</li>
+<li>Mon 8 Feb 2027: Royal Hobart Regatta <span class="flag">(regional: only observed in certain areas of the state)</span></li>
+<li>Mon 8 Mar 2027: Eight Hours Day</li>
+<li>Fri 26 Mar 2027: Good Friday</li>
+<li>Mon 29 Mar 2027: Easter Monday</li>
+<li>Tue 30 Mar 2027: Easter Tuesday <span class="flag">(regional: generally Tasmanian Public Service only)</span></li>
+<li>Sun 25 Apr 2027: Anzac Day</li>
+<li>Mon 14 Jun 2027: King&#x27;s Birthday</li>
+<li>Thu 21 Oct 2027: Royal Hobart Show <span class="flag">(regional: only observed in certain areas of the state, including Hobart)</span></li>
+<li>Mon 1 Nov 2027: Recreation Day <span class="flag">(regional: areas of the state that don&#x27;t observe Royal Hobart Regatta)</span></li>
+<li>Sat 25 Dec 2027: Christmas Day</li>
+<li>Mon 27 Dec 2027: Additional public holiday for Christmas Day</li>
+<li>Tue 28 Dec 2027: Boxing Day</li>
+</ul>
+
+<h2>What this calculator does not do</h2>
+<p>It does not cover enterprise agreements, other awards (Fast Food, Restaurant, Pharmacy, Hair and Beauty, Clerks), allowances (laundry, meal, first aid, cold work), shiftwork rosters, apprentices, annualised salaries, leave, superannuation or tax. Minimum engagement rules (3 hours in Retail, 2 hours for Hospitality casuals) are not applied. It is a first check, not a ruling: the award and the <a href="https://calculate.fairwork.gov.au/" rel="noopener" target="_blank">Fair Work Ombudsman Pay and Conditions Tool</a> prevail.</p>
+</main>
+<footer>
+<p>Rates effective <span id="ratesVersion">2026-07-01</span>, last checked <span id="ratesChecked">2026-10-22</span>. Award data: Fair Work Commission, General Retail Industry Award 2020 and Hospitality Industry (General) Award 2020, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">Creative Commons Attribution 4.0</a>. Public holiday dates from the Fair Work Ombudsman. Figures cross-checked against the Fair Work Ombudsman pay guides published 24 June 2026.</p>
+<p>RosterPay is an independent tool. It is not affiliated with, and not endorsed by, the Fair Work Commission or the Fair Work Ombudsman. All figures are estimates of award minimums based on what you enter. Where this page and the award differ, the award applies. This is general information, not legal or financial advice. Nothing you type is sent anywhere; this page stores your last entries on your own device only.</p>
+<p><a href="test.html">Worked-example tests</a></p>
+</footer>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

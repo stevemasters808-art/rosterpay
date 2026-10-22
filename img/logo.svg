@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">RosterPay payslip icon</title>
+  <rect width="512" height="512" rx="112" fill="#1F4D3A"/>
+  <path d="M144 88H368V424L340 408L312 424L284 408L256 424L228 408L200 424L172 408L144 424V88Z" fill="#F4F6F2"/>
+  <path d="M176 176H336M176 240H304" fill="none" stroke="#1F4D3A" stroke-width="16" stroke-linecap="round"/>
+  <path d="M164 286L348 280L344 326L160 332Z" fill="#FFE24D"/>
+  <path d="M176 306H336" fill="none" stroke="#14201A" stroke-width="16" stroke-linecap="round"/>
+</svg>
