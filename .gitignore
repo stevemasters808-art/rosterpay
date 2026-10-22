@@ -2,3 +2,7 @@
 *.log
 Thumbs.db
 .DS_Store
+claude-report-solo-dev-ad-funded-apps.md
+codex-report-solo-dev-ad-funded-apps.md
+comparison-claude-vs-codex.md
+new-chat-prompt-penalty-rate-checker.md
