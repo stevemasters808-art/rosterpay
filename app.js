@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   /* ---- Configuration. Fill these in once the services exist. ---- */
-  var GOATCOUNTER = '';            /* e.g. 'https://rosterpay.goatcounter.com/count'. Empty = no analytics. */
+  var GOATCOUNTER = 'https://rosterpay.goatcounter.com/count';            /* e.g. 'https://rosterpay.goatcounter.com/count'. Empty = no analytics. */
   var WAITLIST_URL = '';           /* Google Form or Formspree URL for the Android waitlist. Empty = "coming soon" note. */
 
   var $ = function (s, el) { return (el || document).querySelector(s); };
