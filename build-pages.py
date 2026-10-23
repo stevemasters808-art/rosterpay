@@ -1,7 +1,12 @@
 """Writes index.html, one page per state/territory, and sitemap.xml from one template.
 Run after editing the template or holidays.json:  python build-pages.py
 Deploy output is static; this script is not needed on the server."""
-import json, html, datetime
+import json, html, datetime, hashlib
+
+def v(fn):
+    """Short content hash so browsers fetch new JS and CSS after a deploy (GitHub Pages caches for 10 minutes)."""
+    return hashlib.sha1(open(fn, "rb").read()).hexdigest()[:8]
+
 
 SITE = "https://stevemasters808-art.github.io/rosterpay"
 H = json.load(open("holidays.json", encoding="utf-8"))
@@ -78,7 +83,7 @@ def page(code):
 <meta property="og:type" content="website">
 <meta property="og:image" content="{SITE}/img/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v={v("style.css")}">
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebApplication","name":"RosterPay penalty rates calculator","url":"{url}","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{{"@type":"Offer","price":"0","priceCurrency":"AUD"}},"description":"{html.escape(desc)}"}}</script>
 </head>
 <body data-state="{code or ''}">
@@ -187,8 +192,8 @@ def page(code):
 <p>RosterPay is an independent tool. It is not affiliated with, and not endorsed by, the Fair Work Commission or the Fair Work Ombudsman. All figures are estimates of award minimums based on what you enter. Where this page and the award differ, the award applies. This is general information, not legal or financial advice. Nothing you type is sent anywhere; this page stores your last entries on your own device only.</p>
 <p><a href="test.html">Worked-example tests</a></p>
 </footer>
-<script src="engine.js"></script>
-<script src="app.js"></script>
+<script src="engine.js?v={v("engine.js")}"></script>
+<script src="app.js?v={v("app.js")}"></script>
 </body>
 </html>
 """
