@@ -3,7 +3,7 @@ Run after editing the template or holidays.json:  python build-pages.py
 Deploy output is static; this script is not needed on the server."""
 import json, html, datetime
 
-SITE = "https://rosterpay.com.au"
+SITE = "https://stevemasters808-art.github.io/rosterpay"
 H = json.load(open("holidays.json", encoding="utf-8"))
 R = json.load(open("rates.json", encoding="utf-8"))
 

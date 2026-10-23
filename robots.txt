@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /test.html
-Sitemap: https://rosterpay.com.au/sitemap.xml
+Sitemap: https://stevemasters808-art.github.io/rosterpay/sitemap.xml
