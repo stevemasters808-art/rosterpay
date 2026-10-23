@@ -76,6 +76,7 @@ def page(code):
 <title>{title}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{url}">
+<meta name="google-site-verification" content="qCf1_iqAammzVCyLBNmHFTyJg-XhXHJGURxZAkp4Vco">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
